@@ -1,2 +1,6 @@
 jim castillo
+<<<<<<< HEAD
 Shania Reyes
+=======
+Eugene Delfin -_-
+>>>>>>> 161f851caaa9cfbc0d5b18456429f0d9f84b59e1

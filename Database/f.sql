@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`roomSegmentation` (
   `lastYearRNS` INT NOT NULL,
   `actualARR` INT NOT NULL,
   `budgetARR` INT NOT NULL,
-  `;astYearARR` INT NOT NULL,
+  `lastYearARR` INT NOT NULL,
   `growthRateRNS` INT NOT NULL,
   `growthRateARR` INT NOT NULL,
   `actualR` INT NOT NULL,

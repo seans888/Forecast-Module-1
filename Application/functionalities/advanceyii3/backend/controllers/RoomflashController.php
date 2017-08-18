@@ -186,20 +186,21 @@ class RoomflashController extends Controller
 
             //ROOM REVENUES
 
-            $roomflash->roomIndividualActual=$var;
+            $roomflash->roomIndividualActual=Yii::$app->db->createCommand('SELECT SUM(actualR) FROM roomsegmentation where roomType IN ("Rack", "Corporate", "Corporate Others","Packages/Promo","Wholesale Online","Wholesale Offline","Individual Others","Industry Rate")')->queryScalar();
 
-            $roomflash->roomGroupActual=$var1;
-            
+            $roomflash->roomGroupActual=Yii::$app->db->createCommand('SELECT SUM(actualR) FROM roomsegmentation where roomType IN ("Corporate Meetings","Convention/Association","Govt/NGOs","Group Tours","Group Others")')->queryScalar();
+
+
+
             $roomflash->roomRevenueActual=$roomflash->roomGroupActual+$roomflash->roomIndividualActual+$roomflash->roomOtherActual;
 
             //ROOM NIGHTS SOLD
-            $totalIndividualRooms=Yii::$app->db->createCommand('SELECT SUM(actualR) FROM roomsegmentation where roomType IN ("Rack", "Corporate", "Corporate Others","Packages/Promo","Wholesale Online","Wholesale Offline","Individual Others","Industry Rate")')->execute();
+            $totalIndividualRooms=Yii::$app->db->createCommand('SELECT SUM(actualRNS) FROM roomsegmentation where roomType IN ("Rack", "Corporate", "Corporate Others","Packages/Promo","Wholesale Online","Wholesale Offline","Individual Others","Industry Rate")')->queryScalar();
 
             //Yii::$app->db->createCommand()->insert('roomflash', ['totalIndividualRooms' => (Yii::$app->db->createCommand('SELECT SUM(actualR) FROM roomsegmentation where roomType IN ("Rack", "Corporate", "Corporate Others","Packages/Promo","Wholesale Online","Wholesale Offline","Individual Others","Industry Rate")')->execute())])->execute();
 
 
-            $totalGroupRooms=Yii::$app->db->createCommand('SELECT SUM(actualRNS) FROM roomsegmentation where roomType IN ("Corporate Meetings","Convention/Association","Govt/NGOs","Group Tours","Group Others")')->execute();
-
+            $totalGroupRooms=Yii::$app->db->createCommand('SELECT SUM(actualRNS) FROM roomsegmentation where roomType IN ("Corporate Meetings","Convention/Association","Govt/NGOs","Group Tours","Group Others")')->queryScalar();
             //ACTUAL
             $roomflash->roomSoldActual=$totalIndividualRooms+$totalGroupRooms;
             $roomflash->occupancyActual=(($roomflash->roomSoldActual/$roomflash->roomAvailableActual))*100;
@@ -266,14 +267,14 @@ class RoomflashController extends Controller
         $monthYear = new monthyear();
         $roomflash = new roomflash();
         //$totalIndividualRooms=Yii::$app->db->createCommand('SELECT SUM(actualR) FROM roomsegmentation where roomType IN ("Rack", "Corporate", "Corporate Others","Packages/Promo","Wholesale Online","Wholesale Offline","Individual Others","Industry Rate")')->execute();
-        
-        $expression  = monthyear::Find()
-        ->select(['id'])
-        ->from('monthYear')
-        ->where(['month' => 'February'])
-        ->one();
+        $totalIndividualRooms=Yii::$app->db->createCommand('SELECT roomIndividualActual FROM roomsegmentation where roomType="Rack"')->execute();
+        //$totalIndividualRooms=Yii::$app->db->createCommand('SELECT SUM(actualR) FROM roomsegmentation where roomType IN ("Rack", "Corporate", "Corporate Others","Packages/Promo","Wholesale Online","Wholesale Offline","Individual Others","Industry Rate")')->queryScalar();
+      // $expression  = monthyear::Find()
+      //->select(['id'])
+     // //->from('monthYear')
+     // ->where(['month' => 'February'])
+      // ->one();
 
-        print_r ($expression);
-        echo $expression->createCommand()->getRawSql();
+        print_r ($totalIndividualRooms);
     }
 }

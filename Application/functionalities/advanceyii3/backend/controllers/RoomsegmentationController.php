@@ -199,7 +199,13 @@ class RoomsegmentationController extends Controller
             //$models = $query->one();
             //$roomsegmentation->monthYear_id = (new \yii\db\Query())->select('id')->from('monthYear')->where('month'="February")->queryOne());
             //$roomsegmentation->monthYear_id= (new Query())->select(['monthyear_id'])->from('roomsegmentation')->where();
-         
+          // $expression  = monthyear::Find()
+      //->select(['id'])
+     // //->from('monthYear')
+     // ->where(['month' => 'February'])
+      // ->one();
+            //$totalIndividualRooms=Yii::$app->db->createCommand('SELECT SUM(actualR) FROM roomsegmentation where roomType IN ("Rack", "Corporate", "Corporate Others","Packages/Promo","Wholesale Online","Wholesale Offline","Individual Others","Industry Rate")')->execute();
+        
             print_r($roomsegmentation->monthYear_id);
             $roomsegmentation->save();
             
@@ -211,6 +217,22 @@ class RoomsegmentationController extends Controller
         }
 
             die('okay');
+    }
+    public function actionTotal()
+    {
+        $monthYear = new monthyear();
+        $roomflash = new roomsegmentation();
+        
+
+        /////SUCCCCCCC
+        //$totalIndividualRooms=Yii::$app->db->createCommand('SELECT roomType FROM roomsegmentation ')->queryScalar();
+
+        $totalIndividualRooms=Yii::$app->db->createCommand('SELECT SUM(actualR) FROM roomsegmentation where roomType IN ("Rack", "Corporate", "Corporate Others","Packages/Promo","Wholesale Online","Wholesale Offline","Individual Others","Industry Rate")')->queryScalar();
+        
+        
+     
+
+        print_r ($totalIndividualRooms);
     }
 
 }

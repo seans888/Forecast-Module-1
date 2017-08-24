@@ -10,6 +10,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
+use yii\helpers\Url;
 
 DashboardAsset::register($this);
 ?>
@@ -278,7 +279,7 @@ DashboardAsset::register($this);
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                   <div class="pull-right">
-                   <a href="#" class="btn btn-default btn-flat">Sign Out</a>
+                   <?php if (!Yii::$app->user->isGuest){ echo '<div class="pull-right"><a href="'.Url::to(['site/logout']).'" class="btn btn-default btn-flat"> Logout ('. Yii::$app->user->identity->username . ') </a></div>'; }?>
                   </div>
               </li>﻿
           <!-- Control Sidebar Toggle Button -->
@@ -344,9 +345,9 @@ DashboardAsset::register($this);
             <li><a href="index.php?r=roomflash"><i class="fa fa-circle-o"></i> Flash Report</a></li>
           </ul>
         </li>
-                
+
         <li class="treeview">
-          <a href="index.php?r=site/Charts">
+          <a href="index.php?r=site/charts">
             <i class="fa fa-pie-chart"></i> <span>Charts</span>
           </a>
         </li>

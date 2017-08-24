@@ -8,6 +8,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
 use backend\models\roomsegmentation;
+use yii\helpers\Url;
 
 
 /**
@@ -39,7 +40,6 @@ class SiteController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post'],
                 ],
             ],
         ];
@@ -104,26 +104,27 @@ class SiteController extends Controller
 
     public function actionUpload()
     {
-        $fileName = 'file';
-        $uploadPath = 'uploads';
-
-        if (isset($_FILES[$fileName])) {
-            $file = \yii\web\UploadedFile::getInstanceByName($fileName);
-
-            //Print file data
-            //print_r($file);
-
-            if ($file->saveAs($uploadPath . '/' . $file->name)) {
-                //Now save file data to database
-
-                echo \yii\helpers\Json::encode($file);
-            }
-        }else {
-            return $this->render('upload');
-        }
+                if(isset($_POST['moveFile']))
+                {
+                    $fileName = $_FILES['fileName']['name'];
+                    $tempName = $_FILES['fileName']['tmp_name'];
+                    
+                    if(isset($fileName))
+                    {
+                        if(!empty($fileName))
+                        {
+                            $location = "uploads";
+                            if(move_uploaded_file($tempName, $location.$fileName))
+                            {
+                                echo 'File Uploaded';
+                            }
+                        }
+                    }
+                }
 
         return false;
     }
+    
     public function actionBeginforecasting()
     {
         return $this->render('beginforecasting');
@@ -132,6 +133,10 @@ class SiteController extends Controller
     public function actionTables()
     {
         return $this->render('tables');
+    }
+    public function actionCharts()
+    {
+        return $this->render('charts');
     }
 
 }

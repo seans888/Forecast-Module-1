@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use backend\models\Monthyear;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\roomsegmentation */
@@ -12,7 +14,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'roomType')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'roomType')->dropDownList(['Rack'=>'Rack', 'Corporate'=>'Corporate', 'Corporate others'=>'Corporate others', 'Packages/Promo'=> 'Packages/Promo',
+	'Wholesale Online'=>'Wholesale Online', 'Wholesale Offline'=>'Wholesale Offline','Individual Others'=>'Individual Others', 'Corporate Meetings'=>'Convention/Association', 'Government/NGOs', 'Group Tours', 'Group Others'],
+	['prompt' => 'Select room type']) ?>
 
     <?= $form->field($model, 'actualRNS')->textInput() ?>
 
@@ -38,7 +42,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'growthRateR')->textInput() ?>
 
-    <?= $form->field($model, 'monthYear_id')->textInput() ?>
+    <?= $form->field($model, 'monthYear_id')->dropDownList(
+		ArrayHelper::map(Monthyear::find()->all(), 'id', 'month', 'year'),
+		['prompt'=>'Select Month Year']);
+	?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -12,7 +12,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'month')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'month')->dropDownList(['January'=>'January', 'February'=>'February', 'March'=>'March', 'April'=>'April', 'May'=>'May', 'June'=>'June',
+	 'July'=>'July', 'August'=>'August', 'September'=>'September', 'October'=>'October', 'November'=>'November' ,'December'=>'December'], ['prompt' => 'Select month']) 
+	?>
 
     <?= $form->field($model, 'year')->textInput(['maxlength' => true]) ?>
 

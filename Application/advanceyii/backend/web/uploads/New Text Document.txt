@@ -1,0 +1,18 @@
+temp
+
+SELECT SUM(actualR) FROM roomsegmentation where roomType IN ("Rack", "Corporate", "Corporate Others","Packages/Promo","Wholesale Online","Wholesale Offline","Individual Others","Industry Rate")
+
+
+SELECT SUM(actualR) FROM roomsegmentation where roomType IN ("Corporate Meetings","Convention/Association","Gov""t/NGOs","Group Tours","Group Others")
+                                                         
+ =========================================================================================
+SELECT SUM(actualRNS) FROM roomsegmentation where roomType IN ("Rack", "Corporate", "Corporate Others","Packages/Promo","Wholesale Online","Wholesale Offline","Individual Others","Industry Rate")
+                                                         
+
+SELECT SUM(actualRNS) FROM roomsegmentation where roomType IN ("Corporate Meetings","Convention/Association","Gov""t/NGOs","Group Tours","Group Others")
+                                                         
+
+
+
+  =========================================================================================
+

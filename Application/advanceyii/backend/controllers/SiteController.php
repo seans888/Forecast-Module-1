@@ -24,14 +24,14 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => \yii\filters\AccessControl::className(),
-                'only' => ['create', 'update'],
+                'only' => ['login', 'error','logout','index','upload','beginforecasting','tables','charts'],
                 'rules' => [
                     [
                         'actions' => ['login', 'error'],
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['upload','beginforecasting','tables','charts','index','logout'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],

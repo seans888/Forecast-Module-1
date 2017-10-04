@@ -24,6 +24,17 @@ class RoomflashController extends Controller
     public function behaviors()
     {
         return [
+			'access' => [
+                'class' => \yii\filters\AccessControl::className(),
+                'only' => ['index', 'create','update','view','delete'],
+                'rules' => [
+                    [
+                        'actions' => ['index', 'create','update','view','delete'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

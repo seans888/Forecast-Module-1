@@ -20,6 +20,17 @@ class MonthyearController extends Controller
     public function behaviors()
     {
         return [
+			'access' => [
+                'class' => \yii\filters\AccessControl::className(),
+                'only' => ['index', 'create','update','view','delete','upload'],
+                'rules' => [
+                    [
+                        'actions' => ['index', 'create','update','view','upload'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

@@ -11,6 +11,9 @@ use backend\models\monthyearSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use backend\models\UploadForm;
+use yii\web\UploadedFile;
+use yii\helpers\ArrayHelper;
 
 
 /**
@@ -107,7 +110,8 @@ class RoomsegmentationController extends Controller
             ]);
         }
     }
-
+	
+	
     /**
      * Deletes an existing roomsegmentation model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
@@ -136,10 +140,28 @@ class RoomsegmentationController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-     public function actionImportExcel()
-    {
-        $inputFile = 'uploads/January2016RoomSegment.xlsx';
+	
+	public function actionImport(){
+		$model = new UploadForm();
+		$monthyears = Monthyear::find()->all();
+		
+		$listData=ArrayHelper::map($monthyears,'id','displayName');
+		
+        if (Yii::$app->request->isPost) {
+			$model->load(Yii::$app->request->post());
+            $model->fileUpload = UploadedFile::getInstance($model, 'fileUpload');
+            if ($model->upload()) {
+				$upload = 'uploads/'.$model->fileUpload->name;
+				$this->importExcel($upload, $model->monthYear_id);
+                return;
+            }
+        }
+        return $this->render('import_view', ['model' => $model, 'listData' => $listData]);
+	}
 
+	
+     public function importExcel($inputFile, $val)
+    {
         try{        
 
             $inputFileType= \PHPExcel_IOFactory::identify($inputFile);
@@ -154,7 +176,7 @@ class RoomsegmentationController extends Controller
         $sheet = $objPHPExcel->getSheet(0);
         $highestRow = $sheet->getHighestRow();
         $highestColumn = $sheet->getHighestColumn();
-        $val = 2;
+        ;
         for ( $row = 1; $row <= $highestRow; $row++)
         {
             $rowData = $sheet->rangeToArray('A'.$row.':'.$highestColumn.$row,NULL,TRUE,FALSE);

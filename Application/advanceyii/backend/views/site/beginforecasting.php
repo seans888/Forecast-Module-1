@@ -38,7 +38,7 @@ $this->title = 'My Yii Application';
         <h1>Forecast</h1>
         <p class="lead">Excel Files has been found on the server</p>
       
-        <p><a class="btn btn-lg btn-success" href="index.php?r=roomsegmentation/import-excel">Generate Room Segmentation</a> 
+        <p><a class="btn btn-lg btn-success" href="index.php?r=roomsegmentation/import">Generate Room Segmentation</a> 
                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a class="btn btn-lg btn-success" href="index.php?r=roomflash/import-excel1">Generate Flash Report</a>
         </p>    

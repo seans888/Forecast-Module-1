@@ -12,12 +12,12 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(['options'=>['enctype'=>'multipart/form-data']]); ?>
 
-    <?= $form->field($model, 'month')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'year')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($upload, 'month')->fileInput() ?>
+	
+	 <?= $form->field($upload, 'year')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($upload->isNewRecord ? 'Create' : 'Update', ['class' => $upload->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

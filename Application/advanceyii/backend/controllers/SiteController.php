@@ -129,6 +129,10 @@ class SiteController extends Controller
     {
         return $this->render('beginforecasting');
     }
+    public function actionExportreports()
+    {
+        return $this->render('exportreports');
+    }
 
     public function actionTables()
     {

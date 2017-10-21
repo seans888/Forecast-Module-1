@@ -63,8 +63,5 @@ class Monthyear extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Roomsegmentation::className(), ['monthYear_id' => 'id']);
     }
-	
-	public function getDisplayName(){
-		return $this->month.' - '.$this->year;
-	}
+    
 }

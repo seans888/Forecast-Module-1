@@ -354,7 +354,7 @@ DashboardAsset::register($this);
 
 
         <li class="treeview">
-          <a href="#">
+          <a href="index.php?r=site/exportreports">
             <i class="fa fa-files-o"></i>
             <span>Export Reports</span>
             <span class="pull-right-container">

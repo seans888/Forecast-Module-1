@@ -91,6 +91,15 @@ class MonthyearController extends Controller
      * @param integer $id
      * @return mixed
      */
+	 
+		
+	public function actionMultiple()
+	 {
+		 $upload = new Monthyear();
+		 $monthyear = Monthyear::find()->where(['id'=>2016])->all(); 
+		 return $this->render('multiple',['upload'=>$upload,'monthyear'=>$monthyear]);
+	 }
+ 
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);

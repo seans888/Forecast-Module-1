@@ -6,7 +6,7 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use backend\models\roomflash;
-
+use yii\db\Connection;
 /**
  * roomflashSearch represents the model behind the search form about `app\models\roomflash`.
  */
@@ -119,4 +119,9 @@ class roomflashSearch extends roomflash
 
         return $dataProvider;
     }
+	
+	public function forDashboard(){
+		$connection = new Connection();
+		$result = $connection->createCommand('SELECT occupancyActual, roomRevenueActual, roomRevParActual, monthyear.month FROM roomflash LEFT JOIN monthyear ON monthyear.id = roomflash.monthYear_id GROUP BY roomflash.monthYear_id')->queryAll();
+	}
 }

@@ -12,6 +12,9 @@ use backend\models\roomsegmentationSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use backend\models\UploadForm;
+use yii\web\UploadedFile;
+use yii\helpers\ArrayHelper;
 
 /**
  * RoomflashController implements the CRUD actions for roomflash model.
@@ -136,9 +139,29 @@ class RoomflashController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-    public function actionImportExcel1()
+	
+	public function actionImport(){
+		$model = new UploadForm();
+		$monthyears = Monthyear::find()->all();
+		
+		$listData=ArrayHelper::map($monthyears,'id','displayName');
+		
+        if (Yii::$app->request->isPost) {
+			$model->load(Yii::$app->request->post());
+            $model->fileUpload = UploadedFile::getInstance($model, 'fileUpload');
+            if ($model->upload()) {
+				$upload = 'uploads/'.$model->fileUpload->name;
+				$this->importExcel($upload, $model->monthYear_id);
+                return;
+            }
+        }
+        return $this->render('import_view', ['model' => $model, 'listData' => $listData]);
+	}
+
+	
+    public function importExcel($inputFile, $val)
     {
-        $inputFile = 'uploads/January2016Flash.xlsx';
+        //$inputFile = 'uploads/January2016Flash.xlsx';
 
         try{        
 
@@ -155,8 +178,8 @@ class RoomflashController extends Controller
         $highestRow = $sheet->getHighestRow();
         $highestColumn = $sheet->getHighestColumn();
 
-        $var=Yii::$app->db->createCommand('SELECT SUM(actualR) FROM roomsegmentation where roomType IN ("Rack", "Corporate", "Corporate Others","Packages/Promo","Wholesale Online","Wholesale Offline","Individual Others","Industry Rate")')->execute();
-        $var1= Yii::$app->db->createCommand('SELECT SUM(actualR) FROM roomsegmentation where roomType IN ("Corporate Meetings","Convention/Association","Govt/NGOs","Group Tours","Group Others")')->execute();
+        //$var=Yii::$app->db->createCommand('SELECT SUM(actualR) FROM roomsegmentation where roomType IN ("Rack", "Corporate", "Corporate Others","Packages/Promo","Wholesale Online","Wholesale Offline","Individual Others","Industry Rate")')->execute();
+        //$var1= Yii::$app->db->createCommand('SELECT SUM(actualR) FROM roomsegmentation where roomType IN ("Corporate Meetings","Convention/Association","Govt/NGOs","Group Tours","Group Others")')->execute();
 
 
 
@@ -260,7 +283,8 @@ class RoomflashController extends Controller
 
 
             //$roomsegmentation->monthYear_id=monthYear::find('id')->where(['month'=='January','year'=='2016'])->execute;
-            $roomflash->monthYear_id=Yii::$app->db->createCommand('SELECT id FROM monthYear where month = "January" AND year = "2016"')->execute();
+            $roomflash->monthYear_id=$val;
+			//Yii::$app->db->createCommand('SELECT id FROM monthYear where month = "January" AND year = "2016"')->execute();
 
 
             $roomflash->save();

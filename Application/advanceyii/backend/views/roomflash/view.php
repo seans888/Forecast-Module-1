@@ -6,13 +6,21 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\roomflash */
 
-$this->title = $model->id;
+$this->title = $model->monthYear_id;
 $this->params['breadcrumbs'][] = ['label' => 'Roomflashes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="roomflash-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+	<section class="content-header">
+	<ol class="breadcrumb">
+        <li><a href="http://localhost:8080/index.php"><i class="fa fa-dashboard"></i> Home</a></li>
+		<li><a href="http://localhost:8080/index.php?r=roomflash"><i class="roomflash-index"></i> Table</a></li>
+		<li class="active">View</li>
+      </ol>
+    </section>
+
+    <h1>Month <?= Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>

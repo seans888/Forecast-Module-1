@@ -33,10 +33,11 @@ class DashboardAsset extends AssetBundle
     	'plugins/jvectormap/jquery-jvectormap-world-mill-en.js',
     	'plugins/slimScroll/jquery.slimscroll.min.js',
     	'plugins/chartjs/Chart.min.js',
-    	'dist/js/pages/dashboard2.js',
+    	//'dist/js/pages/dashboard2.js',
     	'dist/js/demo.js',
         'js/jquery.uploadify.js',
         'js/jquery.uploadify.min.js',
+        'js/date_time.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

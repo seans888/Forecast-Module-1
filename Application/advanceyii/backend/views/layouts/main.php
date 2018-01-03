@@ -33,7 +33,7 @@ DashboardAsset::register($this);
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="http://localhost/advanceyii/backend/web/index.php" class="logo">
+    <a href="index.php" class="logo">
       FORECASTING SYSTEM
      <!-- <span class="logo-mini"><b>A</b>LT</span> -->
       <!-- logo for regular state and mobile devices -->
@@ -126,125 +126,10 @@ DashboardAsset::register($this);
               <li class="footer"><a href="#">See All Messages</a></li>
             </ul>
           </li>
-          <!-- Notifications: style can be found in dropdown.less -->
-          <li class="dropdown notifications-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">10</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 10 notifications</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                      page and may cause design problems
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-users text-red"></i> 5 new members joined
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-user text-red"></i> You changed your username
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="footer"><a href="#">View all</a></li>
-            </ul>
-          </li>
-          <!-- Tasks: style can be found in dropdown.less -->
-          <li class="dropdown tasks-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-flag-o"></i>
-              <span class="label label-danger">9</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 9 tasks</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <h3>
-                        Design some buttons
-                        <small class="pull-right">20%</small>
-                      </h3>
-                      <div class="progress xs">
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">20% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <h3>
-                        Create a nice theme
-                        <small class="pull-right">40%</small>
-                      </h3>
-                      <div class="progress xs">
-                        <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">40% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <h3>
-                        Some task I need to do
-                        <small class="pull-right">60%</small>
-                      </h3>
-                      <div class="progress xs">
-                        <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">60% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <h3>
-                        Make beautiful transitions
-                        <small class="pull-right">80%</small>
-                      </h3>
-                      <div class="progress xs">
-                        <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">80% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                </ul>
-              </li>
-              <li class="footer">
-                <a href="#">View all tasks</a>
-              </li>
-            </ul>
-          </li>
+          
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="#" class="dropdown-toggle" >
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">User</span>
             </a>
@@ -311,7 +196,7 @@ DashboardAsset::register($this);
       <ul class="sidebar-menu">
         <li class="header">MAIN MENU</li>
         <li class="treeview">
-          <a href="http://localhost/advanceyii/backend/web/index.php">
+          <a href="index.php">
             <i class="fa fa-dashboard"></i> <span>My Dashboard</span>
           </a>
         </li>
@@ -319,17 +204,22 @@ DashboardAsset::register($this);
 
         <li class="treeview">
           <a href="index.php?r=site/beginforecasting">
-            <i class="fa fa-laptop"></i>
-            <span>Begin Forecasting</span>
+            <i class="fa fa-download" aria-hidden="true"></i>
+            <span>Import Data</span>
             
           </a>
 
         </li>
 
-
-
-
-        
+          <li class="treeview">
+          <a href="index.php?r=site/forecast">
+            <i class="fa fa-line-chart" aria-hidden="true"></i>
+            <span>Forecast</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right"></span>
+            </span>
+          </a>
+        </li>
 
 
       <li class="treeview">
@@ -346,6 +236,9 @@ DashboardAsset::register($this);
           </ul>
         </li>
 
+
+
+
         <li class="treeview">
           <a href="index.php?r=site/charts">
             <i class="fa fa-pie-chart"></i> <span>Charts</span>
@@ -353,6 +246,7 @@ DashboardAsset::register($this);
         </li>
 
 
+      
         <li class="treeview">
           <a href="index.php?r=site/exportreports">
             <i class="fa fa-files-o"></i>
@@ -362,7 +256,11 @@ DashboardAsset::register($this);
             </span>
           </a>
         </li>
+
+    
+
         
+
         <li class="header">LABELS</li>
         <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>User Profile</span></a></li>
       </ul>
@@ -372,7 +270,7 @@ DashboardAsset::register($this);
 
 
 
-    <div class="content-wrapper">
+    <div class="content-wrapper" style="padding:13px">
     <!-- Content Header (Page header) -->
    
 

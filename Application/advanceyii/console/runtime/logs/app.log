@@ -1,0 +1,190 @@
+2017-11-14 08:48:53 [-][-][-][error][yii\console\UnknownCommandException] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "init".' in C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\base\Module.php:532
+Stack trace:
+#0 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('init', Array)
+#1 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('init', Array)
+#2 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\yii(27): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\console\UnknownCommandException' with message 'Unknown command "init".' in C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\console\Application.php:183
+Stack trace:
+#0 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('init', Array)
+#1 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\yii(27): yii\base\Application->run()
+#3 {main}
+2017-11-14 08:48:52 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Jim\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'JIM-PC'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Jim'
+    'LOCALAPPDATA' => 'C:\\Users\\Jim\\AppData\\Local'
+    'LOGONSERVER' => '\\\\JIM-PC'
+    'NUMBER_OF_PROCESSORS' => '2'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\GitExtensions\\;C:\\Users\\Jim\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_IDENTIFIER' => 'x86 Family 6 Model 42 Stepping 7, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '2a07'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Jim\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Jim\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'Jim-PC'
+    'USERNAME' => 'Jim'
+    'USERPROFILE' => 'C:\\Users\\Jim'
+    'windir' => 'C:\\Windows'
+    'windows_tracing_flags' => '3'
+    'windows_tracing_logfile' => 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1510645732.3593
+    'REQUEST_TIME' => 1510645732
+    'argv' => [
+        0 => 'yii'
+        1 => 'init'
+    ]
+    'argc' => 2
+]
+2017-12-27 20:19:30 [-][-][-][error][yii\console\UnknownCommandException] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "serve--".' in C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('serve--', Array)
+#1 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('serve--', Array)
+#2 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\yii(27): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\console\UnknownCommandException' with message 'Unknown command "serve--".' in C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\console\Application.php:183
+Stack trace:
+#0 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('serve--', Array)
+#1 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\yii(27): yii\base\Application->run()
+#3 {main}
+2017-12-27 20:19:29 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Jim\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'JIM-PC'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Jim'
+    'LOCALAPPDATA' => 'C:\\Users\\Jim\\AppData\\Local'
+    'LOGONSERVER' => '\\\\JIM-PC'
+    'NUMBER_OF_PROCESSORS' => '2'
+    'OneDrive' => 'C:\\Users\\Jim\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\GitExtensions\\;C:\\Users\\Jim\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_IDENTIFIER' => 'x86 Family 6 Model 42 Stepping 7, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '2a07'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Jim\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Jim\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'Jim-PC'
+    'USERNAME' => 'Jim'
+    'USERPROFILE' => 'C:\\Users\\Jim'
+    'windir' => 'C:\\Windows'
+    'windows_tracing_flags' => '3'
+    'windows_tracing_logfile' => 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1514402368.883
+    'REQUEST_TIME' => 1514402368
+    'argv' => [
+        0 => 'yii'
+        1 => 'serve--'
+        2 => 'docroot=backend/web'
+    ]
+    'argc' => 3
+]
+2017-12-27 20:21:01 [-][-][-][error][yii\console\UnknownCommandException] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "serve--".' in C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('serve--', Array)
+#1 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('serve--', Array)
+#2 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\yii(27): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\console\UnknownCommandException' with message 'Unknown command "serve--".' in C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\console\Application.php:183
+Stack trace:
+#0 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('serve--', Array)
+#1 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 C:\Users\Jim\Documents\Forecasting Module 1\Forecast-Module-1\Application\advanceyii\yii(27): yii\base\Application->run()
+#3 {main}
+2017-12-27 20:21:01 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Jim\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'JIM-PC'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Jim'
+    'LOCALAPPDATA' => 'C:\\Users\\Jim\\AppData\\Local'
+    'LOGONSERVER' => '\\\\JIM-PC'
+    'NUMBER_OF_PROCESSORS' => '2'
+    'OneDrive' => 'C:\\Users\\Jim\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\GitExtensions\\;C:\\Users\\Jim\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_IDENTIFIER' => 'x86 Family 6 Model 42 Stepping 7, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '2a07'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Jim\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Jim\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'Jim-PC'
+    'USERNAME' => 'Jim'
+    'USERPROFILE' => 'C:\\Users\\Jim'
+    'windir' => 'C:\\Windows'
+    'windows_tracing_flags' => '3'
+    'windows_tracing_logfile' => 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1514402461.0683
+    'REQUEST_TIME' => 1514402461
+    'argv' => [
+        0 => 'yii'
+        1 => 'serve--'
+        2 => 'docroot=backend/web'
+    ]
+    'argc' => 3
+]
